@@ -43,3 +43,7 @@ func (t *testingT) Fail(err error) {
 func (t *testingT) Errorf(format string, args ...interface{}) {
 	t.errors = append(t.errors, testError{errMsg: fmt.Sprintf(format, args...), stacktrace: string(debug.Stack())})
 }
+
+// Logf records the error given, but step execution continues. However, the step is marked as failure.
+func (t *testingT) Logf(format string, args ...interface{}) {
+}
